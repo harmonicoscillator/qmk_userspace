@@ -1,4 +1,8 @@
 {
     "userspace_version": "1.0",
-    "build_targets": []
+    "build_targets": [
+        ["crkbd/rev1", "alexmiryoku"],
+        ["bastardkb/charybdis/3x5/v2/splinky_2", "alexmiryoku"],
+        ["bastardkb/tbkmini/v1/elitec/", "alexmiryoku"]
+    ]
 }
