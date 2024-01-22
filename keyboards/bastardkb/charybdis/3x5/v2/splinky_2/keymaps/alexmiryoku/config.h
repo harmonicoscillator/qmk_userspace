@@ -32,9 +32,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY
-
-// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
-#define TAPPING_FORCE_HOLD
+#define QUICK_TAP_TERM 0
 
 #        define CHARYBDIS_MINIMUM_DEFAULT_DPI 600
 
