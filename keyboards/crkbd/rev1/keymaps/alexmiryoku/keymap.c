@@ -356,7 +356,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 
 bool oled_task_user(void) {
     render_anim();
-    return true;
+    return false;
 }
 
 

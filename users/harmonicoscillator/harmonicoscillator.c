@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include features/achordion.h
 
 enum crkbd_layers {
     _QWERTY,
@@ -162,4 +163,38 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         default:
             return TAPPING_TERM;
     }
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record) {
+  if (!process_achordion(keycode, record)) { return false; }
+  // Your macros ...
+
+  return true;
+}
+
+void matrix_scan_user(void) {
+  achordion_task();
+}
+
+bool achordion_chord(uint16_t tap_hold_keycode,
+                     keyrecord_t* tap_hold_record,
+                     uint16_t other_keycode,
+                     keyrecord_t* other_record) {
+  // Exceptionally consider the following chords as holds, even though they
+  // are on the same hand in Dvorak.
+  switch (other_keycode) {
+    case KC_X:
+    case KC_C:
+    case KC_v:
+    case KC_b:
+      return true;
+      break;
+  }
+
+  // Also allow same-hand holds when the other key is in the rows below the
+  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
+  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 3) { return true; }
+
+  // Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
 }

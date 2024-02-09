@@ -34,6 +34,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM_PER_KEY
 #define QUICK_TAP_TERM 0
 
+#define ACHORDION_STREAK
+
 #        define CHARYBDIS_MINIMUM_DEFAULT_DPI 600
 
 //#define RGB_MATRIX_ENABLE
