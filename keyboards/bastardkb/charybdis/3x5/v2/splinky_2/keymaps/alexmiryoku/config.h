@@ -30,11 +30,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // I'm sometimes missing shift+alphas, try this out to help
 #define PERMISSIVE_HOLD
 
-#define TAPPING_TERM 175
+#define TAPPING_TERM 250
 #define TAPPING_TERM_PER_KEY
 #define QUICK_TAP_TERM 0
 
-#define ACHORDION_STREAK
+#define CHORDAL_HOLD
 
 #        define CHARYBDIS_MINIMUM_DEFAULT_DPI 600
 
